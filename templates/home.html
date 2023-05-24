@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      form {
+        margin: 0 auto;
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+      }
+
+      input[type="number"],
+      input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #ccc;
+      }
+
+      input[type="number"]:focus,
+      input[type="file"]:focus {
+        border-bottom: 2px solid #403d39;
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #ccc;
+      }
+
+      select:focus {
+        border-bottom: 2px solid #403d39;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #403d39;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: #403d39;
+        color: white;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      header h2 {
+        margin: 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #403d39;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      body h1,
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <header>
+    <h1>Department of Artificial Intelligence and Data Science</h1>
+    <h2>Fr. Conceicao Rodrigues College of Engineering, Bandra.</h2>
+  </header>
+
+  <body>
+    <br />
+    <h1>RESULT ANALZER FOR MUMBAI UNIVERSITY</h1>
+    <h2>
+      This application will generate a report based on the result of the
+      particular class for a particular semester.
+    </h2>
+    <p style="text-align: center">
+      <b>Note: </b> Please use the <a href="https://www.zamzar.com/">Zamzar</a>
+      website for converting your .pdf file into .csv file.
+    </p>
+    <form method="post" action="/report" enctype="multipart/form-data">
+      <label for="branch">Branch:</label>
+      <select name="branch" id="branch">
+        <option value="a">Artificial Intelligence and Data Science</option>
+        <option value="c">Computer Science Engineering</option>
+        <option value="e">Electronics and Computer Science</option>
+        <option value="m">Mechanical Engineering</option>
+      </select>
+      <br />
+
+      <label for="year">Year of passing:</label>
+      <input type="number" id="year" name="year" min="2024" />
+
+      <label for="semester">Semester:</label>
+      <select name="semester" id="semester">
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <option value="5">Semester 5</option>
+        <option value="6">Semester 6</option>
+        <option value="7">Semester 7</option>
+        <option value="8">Semester 8</option>
+      </select>
+      <br />
+
+      <label for="file">Select a file:</label><br />
+      <input type="file" id="file" name="file" accept=".csv" />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+  <footer>
+    <p>
+      &copy; Mohit Pansare (9391), Gladys Gince (9409), Rhea Bhalekar (9355)
+      <br />
+      This project has been made by the students of Third Year AI-DS (batch of
+      2024) as a part of their Mini Project for the 6th Semester.
+    </p>
+  </footer>
+</html>
