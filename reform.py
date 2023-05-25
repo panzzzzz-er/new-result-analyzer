@@ -100,9 +100,9 @@ def reassign_rollnos(roll_numbers, result_cleared):
     return result_cleared
 
 
-def clear_result_data(result, semester):
+def clear_result_data(result, semester, branch):
 
-    result = remove_rows_columns(result)
+    result = remove_rows_columns(result, branch, semester)
     result = correct_rows_columns(result)
     result_cleared = pd.DataFrame()
     result_cleared = cleared_result(result_cleared, result)
