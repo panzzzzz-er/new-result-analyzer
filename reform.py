@@ -1,24 +1,42 @@
 import pandas as pd
 import add_header as ah
 
-def remove_rows_columns(result):
+def remove_rows_columns(result, branch, semester):
     result = result.iloc[10:]
-    cheads = [x for x in range(len(result.columns))]
-    result.columns = cheads
+    result.columns = [x for x in range(len(result.columns))]
 
-    result = result.drop(2, axis=1)
-    result = result.drop(3, axis=1)
+    if branch == 'a':
+        # print("branch='aids'")
+        if semester == 1:
+            cols_to_drop = [2, 3, 32]
+        elif semester == 2:
+            cols_to_drop = [2, 3, 36]
+        elif semester == 3:
+            cols_to_drop = [2, 3, 36]
+        elif semester == 4:
+            cols_to_drop = [2, 3, 37]
+        elif semester == 5:
+            cols_to_drop = [2, 3, 35]
+        elif semester == 6:
+            cols_to_drop = [2, 3]
+        elif semester == 7:
+            cols_to_drop = [2, 3]
+        elif semester == 8:
+            cols_to_drop = [2, 3]
 
-    if len(result.columns) == 31:
-        result = result.drop(32, axis=1)
-    elif len(result.columns) == 33:
-        result = result.drop(34, axis=1)
-    elif len(result.columns) == 35:
-        result = result.drop(36, axis=1)
-    elif len(result.columns) == 36:
-        result = result.drop(37, axis=1)
+    elif branch == 'c':
+        # print("branch='computers'")
+        string = 'this is yet to be coded'
+    elif branch == 'e':
+        # print("branch='ecs'")
+        string = 'this is yet to be coded'
+    elif branch == 'm':
+        # print("branch='mech'")
+        string = 'this is yet to be coded'
 
+    result = result.drop(cols_to_drop, axis=1)
     return result
+
 
 
 def correct_rows_columns(result):
