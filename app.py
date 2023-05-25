@@ -56,7 +56,7 @@ def create_app():
         elif br=='m': branch = 'Mechanical Engineering'
 
         result = pd.read_csv(newname)
-        cleared_result = rf.clear_result_data(result, semester)
+        cleared_result = rf.clear_result_data(result, semester, br)
         # print(cleared_result)
 
         strenght = len(cleared_result)
