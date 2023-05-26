@@ -1,6 +1,7 @@
 import pandas as pd
 import add_header as ah
 
+
 def remove_rows_columns(result, branch, semester):
     result = result.iloc[10:]
     result.columns = [x for x in range(len(result.columns))]
@@ -16,7 +17,7 @@ def remove_rows_columns(result, branch, semester):
         elif semester == 4:
             cols_to_drop = [2, 3, 37]
         elif semester == 5:
-            cols_to_drop = [2, 3, 35]
+            cols_to_drop = [2, 3, 32, 36]
         elif semester == 6:
             cols_to_drop = [2, 3]
         elif semester == 7:
@@ -36,7 +37,6 @@ def remove_rows_columns(result, branch, semester):
 
     result = result.drop(cols_to_drop, axis=1)
     return result
-
 
 
 def correct_rows_columns(result):
