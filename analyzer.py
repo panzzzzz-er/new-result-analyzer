@@ -90,3 +90,30 @@ def find_kts(cleared_result):
         if i != i:
             kts += 1
     return kts
+
+
+def find_sub_mark_ranges(cleared_result, semester):
+    sub_ranges = {}
+    subjects = pd.read_excel('subjects.xlsx')
+    subs = subjects[semester].tolist()
+    subs = [x for x in subs if x == x]
+    # print(subs)
+    heads = cleared_result.columns
+    # print(heads)
+    columns = [i for i in range(len(heads)) if isinstance(
+        heads[i], int) and heads[i] % 10 == 1]
+    # print(columns)
+
+    for col in columns:
+        name = subs[col]
+        # print(name)
+        # print(cleared_result[heads[col]])
+        sub_marks = cleared_result[heads[col]]
+        count = 0
+        for x in sub_marks:
+            # print(x, type(x))
+            if x.isdigit() and int(x) >= 60:
+                count += 1
+
+        sub_ranges[name] = count
+    return sub_ranges
