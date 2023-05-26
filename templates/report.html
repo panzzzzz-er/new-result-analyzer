@@ -214,6 +214,14 @@
               <td>Number of Students with KT's</td>
               <td>{{kts}}</td>
             </tr>
+            <tr>
+              <td>No. of students scoring >60 in theory subjects</td>
+              <td>
+                {% for key, value in sub_ranges.items() %}
+                <li>{{ key }}: {{ value }}</li>
+                {% endfor %}
+              </td>
+            </tr>
           </table>
         </td>
       </tr>

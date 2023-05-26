@@ -93,6 +93,9 @@ def create_app():
         kts = ana.find_kts(cleared_result)
         # print(kts)
 
+        sub_ranges = ana.find_sub_mark_ranges(cleared_result, semester)
+        # print(sub_ranges)
+
         return render_template('report.html',
                                semester=semester,
                                branch=branch,
@@ -106,7 +109,8 @@ def create_app():
                                subject_maxmarks=subject_maxmarks,
                                student_ranges=student_ranges,
                                kts=kts,
-                               strenght = strenght
+                               strenght = strenght,
+                               sub_ranges = sub_ranges
                                )
 
     if __name__ == '__main__':
